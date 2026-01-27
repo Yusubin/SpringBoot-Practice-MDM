@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  height: 100vh;
+}
+
+.login-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 520px;
+  padding: 50px 60px;
+  background: #f8fbfa;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.subtitle {
+  color: #0c8a8a;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  color: #0c8a8a;
+  margin-bottom: 40px;
+}
+
+.form {
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  width: 120px;
+  text-align: left;
+  color: #0c8a8a;
+  font-weight: 600;
+}
+
+input {
+  flex: 1;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
+  background: #d7dfc1;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  background: #cdd8ae;
+}
+
+.error {
+  color: #d60000;
+  font-size: 14px;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* 버튼 그림자 */
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* 호버 시 그림자 강조 */
+}
+
+.search-btn { background-color: #479393; color: white; }
+
+.form-buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 15px;
+}

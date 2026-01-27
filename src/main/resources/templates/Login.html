@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/Login.css}"/>
+</head>
+<body>
+<div class="login-wrapper">
+    <div class="login-card">
+        <p class="subtitle">マスタ管理ツール</p>
+        <h1>Login</h1>
+
+        <div class="form">
+            <div class="row">
+                <label>ID</label>
+                <input type="text" />
+            </div>
+
+            <div class="row">
+                <label>PASSWORD</label>
+                <input type="password" />
+            </div>
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="btn search-btn">LOGIN</button>
+        </div>
+<!--        <p class="error">※ログイン失敗</p>-->
+    </div>
+</div>
+</body>
+</html>
