@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.example.practice.model.vo.EmployeeInfoVO" alias="EmployeeInfoVO"/>
+        <typeAlias type="com.example.practice.model.vo.OrdersInfoVO" alias="OrdersInfoVO"/>
+        <typeAlias type="com.example.practice.model.vo.OrdersVO" alias="OrdersVO"/>
+        <typeAlias type="com.example.practice.model.vo.PayrollVO" alias="PayrollVO"/>
+        <typeAlias type="com.example.practice.model.vo.ProductInfoVO" alias="ProductInfoVO"/>
+        <typeAlias type="com.example.practice.model.vo.SalaryInfoVO" alias="SalaryInfoVO"/>
+        <typeAlias type="com.example.practice.model.vo.UserInfoVO" alias="UserInfoVO"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="mapper/user.xml"/>
+
+    </mappers>
+
+</configuration>

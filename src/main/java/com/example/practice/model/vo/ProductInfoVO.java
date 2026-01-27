@@ -1,0 +1,92 @@
+package com.example.practice.model.vo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+import java.security.Timestamp;
+@Entity
+@Table(name = "product_info")
+public class ProductInfoVO {
+    private String product_id;
+    private String product_name;
+    private Integer product_price;
+    private String product_category;
+    private String product_Description;
+    private Integer product_Stock;
+    private Timestamp product_CreatedDate;
+    private Timestamp product_ModifyDate;
+
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
+    }
+
+    public Integer getProduct_price() {
+        return product_price;
+    }
+    public Integer getProduct_Stock() {
+        return product_Stock;
+    }
+
+    public String getProduct_id() {
+        return product_id;
+    }
+
+    public String getProduct_category() {
+        return product_category;
+    }
+
+    public String getProduct_Description() {
+        return product_Description;
+    }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+    public Timestamp getProduct_CreatedDate() {
+        return product_CreatedDate;
+    }
+
+    public Timestamp getProduct_ModifyDate() {
+        return product_ModifyDate;
+    }
+
+    public void setProduct_category(String product_category) {
+        this.product_category = product_category;
+    }
+
+    public void setProduct_CreatedDate(Timestamp product_CreatedDate) {
+        this.product_CreatedDate = product_CreatedDate;
+    }
+
+    public void setProduct_Description(String product_Description) {
+        this.product_Description = product_Description;
+    }
+
+    public void setProduct_ModifyDate(Timestamp product_ModifyDate) {
+        this.product_ModifyDate = product_ModifyDate;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+    public void setProduct_price(Integer product_price) {
+        this.product_price = product_price;
+    }
+
+    public void setProduct_Stock(Integer product_Stock) {
+        this.product_Stock = product_Stock;
+    }
+
+    @Override
+    public String toString(){
+        return "[product_id" +
+                "\nproduct_name" +product_name+
+                "\nproduct_price" +product_price+
+                "\nproduct_category" +product_category+
+                "\nproduct_Description" +product_Description+
+                "\nproduct_Stock" +product_Stock+
+                "\nproduct_CreatedDate" +product_CreatedDate+
+                "\nproduct_ModifyDate"+product_ModifyDate+"]";
+    }
+}
