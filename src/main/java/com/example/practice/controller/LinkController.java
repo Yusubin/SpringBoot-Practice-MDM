@@ -12,4 +12,9 @@ public class LinkController {
 public String index() {
     return "Login";
 }
+
+@GetMapping("/Main")
+public String main() {
+        return "Main";
+    }
 }
