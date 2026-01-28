@@ -42,7 +42,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <header>
-            <h1>商品情報管理</h1>
+            <h1>社員情報管理</h1>
         </header>
 
         <!-- Search Section -->
@@ -83,7 +83,33 @@
                 <button class="btn edit-btn">新規登録</button>
             </section>
 
+            <table>
+                <thead>
+                <tr>
+                    <th>EmployeeId</th>
+                    <th>EmployeeName</th>
+                    <th>EmployeeEmail</th>
+                    <th>EmployeeDepartment</th>
+                    <th>EmployeePosition</th>
+                    <th>EmployeeStatus</th>
+                    <th>EmployeeCreatedAt</th>
+                    <th>EmployeeUpdateAt</th>
 
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="view : ${employees}">
+                    <td th:text="${view.employeeId}"></td>
+                    <td th:text="${view.employeeName}"></td>
+                    <td th:text="${view.employeeEmail}"></td>
+                    <td th:text="${view.employeeDepartment}"></td>
+                    <td th:text="${view.employeePosition}"></td>
+                    <td th:text="${view.employeeStatus}"></td>
+                    <td th:text="${view.employeeCreatedAt}"></td>
+                    <td th:text="${view.employeeUpdatedAt}"></td> <!-- 수정된 부분 -->
+                </tr>
+                </tbody>
+            </table>
         </section>
     </main>
 </div>
