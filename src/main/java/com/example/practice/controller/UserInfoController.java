@@ -39,12 +39,15 @@ public class UserInfoController {
             dto.setUserPassword(null);
             System.out.println("로그인 성공, 세션에 저장할 DTO: " + dto);
             session.setAttribute("user", dto);
-            return "Main";
+            return "redirect:/Main";
         } else {
             System.out.println("로그인 실패");
 
-            return "Login";
+            return "redirect:/Login";
         }
     }
+
+
+
 
 }
