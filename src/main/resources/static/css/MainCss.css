@@ -143,6 +143,10 @@ header h1 {
 
 .edit-btn { background-color: #609995; color: #fff; }
 
+li a {
+    text-decoration: none;
+    color: white;
+}
 
 /* Data Section */
 .data-section {

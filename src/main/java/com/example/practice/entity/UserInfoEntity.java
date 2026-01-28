@@ -9,10 +9,9 @@ import lombok.Setter;
 
 import java.sql.Timestamp;
 
+@Getter
 @Entity
 @Table(name = "user_info")
-@Getter
-@Setter
 public class UserInfoEntity {
     @Id
     @Column(name = "user_id")

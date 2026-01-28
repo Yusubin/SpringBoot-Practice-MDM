@@ -11,23 +11,30 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 @Service
 public class UserInfoService {
-    private final UserInfoRepository userInfoRepository;
 
-    public UserInfoService(UserInfoRepository userInfoRepository) {
-        this.userInfoRepository = userInfoRepository;
+    private final UserInfoRepository repo;
+
+    public UserInfoService(UserInfoRepository repo) {
+        this.repo = repo;
     }
 
-    public boolean login(LoginRequestDto loginRequestDto) {
-        Optional<UserInfoEntity> userOpt = userInfoRepository.findByUserId(loginRequestDto.getUserId());
+    public LoginRequestDto login(LoginRequestDto dto) {
+        UserInfoEntity user = repo.findByUserId(dto.getUserId())
+                .orElse(null);
 
-        if (userOpt.isPresent()) {
-            UserInfoEntity user = userOpt.get();
-
-            // 비밀번호 단순 비교 (실제론 암호화+검증 필요)
-            return user.getUserPassword().equals(loginRequestDto.getUserPassword());
+        if (user == null) {
+            return null;
         }
 
-        return false;
-    }
 
+        if (!user.getUserPassword().equals(dto.getUserPassword())) {
+            return null;
+        }
+
+        LoginRequestDto sessionDto = new LoginRequestDto();
+        sessionDto.setUserId(user.getUserId());
+        sessionDto.setUserPassword(null);
+
+        return sessionDto;
+    }
 }
