@@ -36,4 +36,22 @@ public class ProductInfoController {
 
         return "Main";
     }
+
+    @GetMapping("/ProductsModify")
+    public String getViewModify_(Model model, HttpSession session){
+        LoginRequestDto user = (LoginRequestDto) session.getAttribute("user");
+
+        if(user == null){
+            return "redirect:/Login";
+        }
+        model.addAttribute("user", user);
+
+        System.out.println("Session userId: " +  model.addAttribute("user", user));
+        List<ProductInfoEntity> products = service.getAllViewList();
+        System.out.println("products size: " + products.size());
+        products.forEach(e -> System.out.println(e.getProductCategory()));
+        model.addAttribute("products", products);
+
+        return "MainModify";
+    }
 }

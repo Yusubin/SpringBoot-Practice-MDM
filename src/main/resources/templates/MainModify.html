@@ -78,9 +78,8 @@
         <!-- Actions Section -->
         <section class="card">
             <section class="actions-section">
-                <button class="btn edit-btn" onclick="location.href='/MainModify'">修正</button>
-                <button class="btn edit-btn" onclick="location.href='/MainSave'">保存</button>
-                <button class="btn edit-btn" onclick="location.href='/MainNew'">新規登録</button>
+                <button class="btn edit-btn" onclick="location.href='/Products'">取消</button>
+                <button class="btn edit-btn" onclick="location.href='/ProductsInfoModifySave'">保存</button>
             </section>
             <table class="table_design02">
                 <thead>
@@ -99,13 +98,13 @@
                 <tbody>
                 <tr th:each="view : ${products}">
                     <td th:text="${view.productId}"></td>
-                    <td th:text="${view.productName}"></td>
-                    <td th:text="${view.productPrice}"></td>
-                    <td th:text="${view.productCategory}"></td>
-                    <td th:text="${view.productDescription}"></td>
-                    <td th:text="${view.productStock}"></td>
-                    <td th:text="${view.productCreatedDate}"></td>
-                    <td th:text="${view.ModifyDate}"></td> <!-- 수정된 부분 -->
+                    <td><input type="text" id="productName" name="productName" th:value="${view.productName}"></td>
+                    <td><input type="text" id="productPrice" name="productPrice" th:value="${view.productPrice}"></td>
+                    <td><input type="text" id="productCategory" name="productCategory" th:value="${view.productCategory}"></td>
+                    <td><input type="text" id="productDescription" name="productDescription" th:value="${view.productDescription}"></td>
+                    <td><input type="text" id="productStock" name="productStock" th:value="${view.productStock}"></td>
+                    <td><input type="text" id="productCreatedDate" name="productCreatedDate" th:value="${view.productCreatedDate}"></td>
+                    <td><input type="text" id="ModifyDate" name="ModifyDate" th:value="${view.ModifyDate}"></td> <!-- 수정된 부분 -->
                 </tr>
                 </tbody>
             </table>

@@ -42,7 +42,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <header>
-            <h1>商品情報管理</h1>
+            <h1>社員情報管理</h1>
         </header>
 
         <!-- Search Section -->
@@ -78,38 +78,37 @@
         <!-- Actions Section -->
         <section class="card">
             <section class="actions-section">
-                <button class="btn edit-btn" onclick="location.href='/MainModify'">修正</button>
-                <button class="btn edit-btn" onclick="location.href='/MainSave'">保存</button>
-                <button class="btn edit-btn" onclick="location.href='/MainNew'">新規登録</button>
+                <button class="btn edit-btn" onclick="location.href='/Salarys'">取消</button>
+                <button class="btn edit-btn" onclick="location.href='/SalarysInfoModifySave'">保存</button>
             </section>
+
             <table class="table_design02">
                 <thead>
                 <tr>
-                    <th>product_id</th>
-                    <th>product_name</th>
-                    <th>product_price</th>
-                    <th>product_category</th>
-                    <th>product_description</th>
-                    <th>product_stock</th>
-                    <th>modify_date</th>
-                    <th>product_created_date</th>
+                    <th>SalaryId</th>
+                    <th>EmployeeID</th>
+                    <th>SalaryBase</th>
+                    <th>SalaryPayType</th>
+                    <th>SalaryEffectiveFrom</th>
+                    <th>SalaryEffectiveTo</th>
+                    <th>SalaryCreatedAt</th>
+                    <th>SalaryUpdateAt</th>
 
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="view : ${products}">
-                    <td th:text="${view.productId}"></td>
-                    <td th:text="${view.productName}"></td>
-                    <td th:text="${view.productPrice}"></td>
-                    <td th:text="${view.productCategory}"></td>
-                    <td th:text="${view.productDescription}"></td>
-                    <td th:text="${view.productStock}"></td>
-                    <td th:text="${view.productCreatedDate}"></td>
-                    <td th:text="${view.ModifyDate}"></td> <!-- 수정된 부분 -->
+                <tr th:each="view : ${salarys}">
+                    <td th:text="${view.SalaryId}"></td>
+                    <td th:text="${view.EmployeeId}"></td>
+                    <td><input type="text" id="SalaryBase" name="SalaryBase" th:value="${view.SalaryBase}"></td>
+                    <td><input type="text" id="SalaryPayType" name="SalaryBase" th:value="${view.SalaryPayType}"></td>
+                    <td><input type="text" id="SalaryEffectiveFrom" name="SalaryBase" th:value="${view.SalaryEffectiveFrom}"></td>
+                    <td><input type="text" id="SalaryEffectiveTo" name="SalaryBase" th:value="${view.SalaryEffectiveTo}"></td>
+                    <td th:text="${view.SalaryCreatedAt}"></td>
+                    <td><input type="text" id="SalaryUpdateAt" name="SalaryBase" th:value="${view.SalaryUpdateAt}"></td> <!-- 수정된 부분 -->
                 </tr>
                 </tbody>
             </table>
-
         </section>
     </main>
 </div>

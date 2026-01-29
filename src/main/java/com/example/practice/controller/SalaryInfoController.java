@@ -37,4 +37,23 @@ public class SalaryInfoController {
 
         return "SalaryInfoMain";
     }
+
+    @GetMapping("//SalaryMainModify")
+    public String getViewsModify(Model model, HttpSession session) {
+
+        LoginRequestDto user = (LoginRequestDto) session.getAttribute("user");
+
+        if(user == null){
+            return "redirect:/Login";
+        }
+        model.addAttribute("user", user);
+
+        System.out.println("Session userId: " +  model.addAttribute("user", user));
+        List<SalaryInfoEntity> salarys = service.getAllViewList();
+        System.out.println("salarys size: " + salarys.size());
+        salarys.forEach(e -> System.out.println(e.getSalaryBase()));
+        model.addAttribute("salarys", salarys);
+
+        return "SalaryInfoMainModify";
+    }
 }

@@ -36,4 +36,23 @@ public class PayrollController {
 
         return "PayrollsMain";
     }
+
+    @GetMapping("/PayrollsModify")
+    public String getViewsModify(Model model, HttpSession session) {
+
+        LoginRequestDto user = (LoginRequestDto) session.getAttribute("user");
+
+        if(user == null){
+            return "redirect:/Login";
+        }
+        model.addAttribute("user", user);
+
+        System.out.println("Session userId: " +  model.addAttribute("user", user));
+        List<PayRollEntity> payrolls = service.getAllViewList();
+        System.out.println("payrolls size: " + payrolls.size());
+        payrolls.forEach(e -> System.out.println(e.getPayrollId()));
+        model.addAttribute("payrolls", payrolls);
+
+        return "PayrollsModify";
+    }
 }

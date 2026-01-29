@@ -37,4 +37,24 @@ public class EmployeeInfoController {
 
         return "EmployeeMain";
     }
+
+
+    @GetMapping("/EmployeeMainModify")
+    public String getViewsModify(Model model, HttpSession session) {
+
+        LoginRequestDto user = (LoginRequestDto) session.getAttribute("user");
+
+        if(user == null){
+            return "redirect:/Login";
+        }
+        model.addAttribute("user", user);
+
+        System.out.println("Session userId: " +  model.addAttribute("user", user));
+        List<EmployeeInfoEntity> employees = service.getAllViewList();
+        System.out.println("employees size: " + employees.size());
+        employees.forEach(e -> System.out.println(e.getEmployeeName()));
+        model.addAttribute("employees", employees);
+
+        return "EmployeeMainModify";
+    }
 }
