@@ -1,8 +1,9 @@
 package com.example.practice.controller;
 
 import com.example.practice.dto.LoginRequestDto;
-import com.example.practice.entity.EmployeeInfoEntity;
-import com.example.practice.service.EmployeeInfoService;
+import com.example.practice.entity.OrderInfoEntity;
+import com.example.practice.entity.SalaryInfoEntity;
+import com.example.practice.service.SalaryInfoService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,15 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class EmployeeInfoController {
-    private final EmployeeInfoService service;
+public class SalaryInfoController {
+    private final SalaryInfoService service;
 
-    public EmployeeInfoController(EmployeeInfoService service) {
+    public SalaryInfoController(SalaryInfoService service) {
         this.service = service;
     }
 
-
-    @GetMapping("/Employee")
+    @GetMapping("/Salarys")
     public String getViews(Model model, HttpSession session) {
 
         LoginRequestDto user = (LoginRequestDto) session.getAttribute("user");
@@ -30,11 +30,11 @@ public class EmployeeInfoController {
         model.addAttribute("user", user);
 
         System.out.println("Session userId: " +  model.addAttribute("user", user));
-        List<EmployeeInfoEntity> employees = service.getAllViewList();
-        System.out.println("employees size: " + employees.size());
-        employees.forEach(e -> System.out.println(e.getEmployeeName()));
-        model.addAttribute("employees", employees);
+        List<SalaryInfoEntity> salarys = service.getAllViewList();
+        System.out.println("salarys size: " + salarys.size());
+        salarys.forEach(e -> System.out.println(e.getSalaryBase()));
+        model.addAttribute("salarys", salarys);
 
-        return "EmployeeMain";
+        return "SalaryInfoMain";
     }
 }

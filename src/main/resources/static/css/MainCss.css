@@ -140,6 +140,28 @@ header h1 {
   gap: 15px;
   margin-bottom: 30px;
 }
+/.table_design02 {
+border-collapse: collapse;
+width: 100%;
+max-width: 700px;
+}
+.table_design02 tr {
+background-color: #e6f1f6;
+}
+.table_design02 tr:nth-child(odd) {
+background-color: #fff;
+}
+.table_design02 th, .table_design02 td {
+padding: 1em;
+}
+.table_design02 th {
+font-weight: bold;
+text-align: center;
+width: 20%;
+min-width: 4em;
+color:white;
+background-color: #609995;
+}
 
 .edit-btn { background-color: #609995; color: #fff; }
 

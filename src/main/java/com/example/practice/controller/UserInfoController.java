@@ -27,7 +27,7 @@ public class UserInfoController {
 
         if (loginUser != null) {
             session.setAttribute("user", loginUser);
-            return "redirect:/Main";
+            return "redirect:/Products";
         } else {
             return "redirect:/Login";
         }

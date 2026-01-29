@@ -42,7 +42,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <header>
-            <h1>商品情報管理</h1>
+            <h1>社員情報管理</h1>
         </header>
 
         <!-- Search Section -->
@@ -82,34 +82,39 @@
                 <button class="btn edit-btn">保存</button>
                 <button class="btn edit-btn">新規登録</button>
             </section>
+
             <table class="table_design02">
                 <thead>
                 <tr>
-                    <th>product_id</th>
-                    <th>product_name</th>
-                    <th>product_price</th>
-                    <th>product_category</th>
-                    <th>product_description</th>
-                    <th>product_stock</th>
-                    <th>modify_date</th>
-                    <th>product_created_date</th>
-
+                    <th>payroll_id</th>
+                    <th>employee_id</th>
+                    <th>pay_year</th>
+                    <th>pay_month</th>
+                    <th>gross_salary</th>
+                    <th>tax_amount</th>
+                    <th>insurance_amount</th>
+                    <th>net_salary</th>
+                    <th>paid_at</th>
+                    <th>created_at</th>
+                    <th>update_at</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="view : ${products}">
-                    <td th:text="${view.productId}"></td>
-                    <td th:text="${view.productName}"></td>
-                    <td th:text="${view.productPrice}"></td>
-                    <td th:text="${view.productCategory}"></td>
-                    <td th:text="${view.productDescription}"></td>
-                    <td th:text="${view.productStock}"></td>
-                    <td th:text="${view.productCreatedDate}"></td>
-                    <td th:text="${view.ModifyDate}"></td> <!-- 수정된 부분 -->
+                <tr th:each="view : ${payrolls}">
+                    <td th:text="${view.payrollId}"></td>
+                    <td th:text="${view.EmployeeId}"></td>
+                    <td th:text="${view.payYear}"></td>
+                    <td th:text="${view.payMonth}"></td>
+                    <td th:text="${view.grossSalary}"></td>
+                    <td th:text="${view.taxAmount}"></td>
+                    <td th:text="${view.insuranceAmount}"></td>
+                    <td th:text="${view.netSalary}"></td>
+                    <td th:text="${view.paidAt}"></td>
+                    <td th:text="${view.createdAt}"></td>
+                    <td th:text="${view.updatedAt}"></td>
                 </tr>
                 </tbody>
             </table>
-
         </section>
     </main>
 </div>

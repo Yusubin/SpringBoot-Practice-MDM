@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 public class ProductInfoDTO {
+    private String productId;
     private String productName;
     private String productPrice;
     private String productCategory;

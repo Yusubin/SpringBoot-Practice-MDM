@@ -8,14 +8,10 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 public class OrderInfoDTO {
-    private String OrderItemId;
-    private String ProductId;
-    private String UserId;
-    private Timestamp OrderDate;
-    private Integer OrderTotalAmount;
-    private String OrderPaymentMethod;
-    private String OrderStatus;
-    private Timestamp OrderModifyDate;
+    private String orderId;
+    private String userId;
+    private String orderItemId;
+    private Integer quantity;
 
     public OrderInfoDTO(){}
 }

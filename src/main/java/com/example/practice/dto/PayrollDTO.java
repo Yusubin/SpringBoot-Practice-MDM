@@ -1,5 +1,7 @@
 package com.example.practice.dto;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +20,7 @@ public class PayrollDTO {
     private Integer netSalary;
     private Timestamp paidAt;
     private Timestamp createdAt;
+    private Timestamp updatedAt;
 
     public PayrollDTO(){}
 }
