@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>社員情報管理</title>
+    <title>注文情報管理</title>
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
     <link th:href="@{/css/MainCss.css}" rel="stylesheet" type="text/css">
 </head>
@@ -42,7 +42,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <header>
-            <h1>商品情報管理</h1>
+            <h1>注文情報管理</h1>
         </header>
 
         <!-- Search Section -->
@@ -82,34 +82,25 @@
                 <button class="btn edit-btn">保存</button>
                 <button class="btn edit-btn">新規登録</button>
             </section>
+
             <table class="table_design02">
                 <thead>
                 <tr>
-                    <th>product_id</th>
-                    <th>product_name</th>
-                    <th>product_price</th>
-                    <th>product_category</th>
-                    <th>product_description</th>
-                    <th>product_stock</th>
-                    <th>modify_date</th>
-                    <th>product_created_date</th>
-
+                    <th>order_id</th>
+                    <th>user_id</th>
+                    <th>quantity</th>
+                    <th>order_item_id</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="view : ${products}">
-                    <td th:text="${view.productId}"></td>
-                    <td th:text="${view.productName}"></td>
-                    <td th:text="${view.productPrice}"></td>
-                    <td th:text="${view.productCategory}"></td>
-                    <td th:text="${view.productDescription}"></td>
-                    <td th:text="${view.productStock}"></td>
-                    <td th:text="${view.productCreatedDate}"></td>
-                    <td th:text="${view.ModifyDate}"></td> <!-- 수정된 부분 -->
+                <tr th:each="view : ${orderInfos}">
+                    <td th:text="${view.orderId}"></td>
+                    <td th:text="${view.userId}"></td>
+                    <td th:text="${view.quantity}"></td>
+                    <td th:text="${view.orderItemId}"></td>
                 </tr>
                 </tbody>
             </table>
-
         </section>
     </main>
 </div>

@@ -11,21 +11,26 @@
         <p class="subtitle">マスタ管理ツール</p>
         <h1>Login</h1>
 
-        <div class="form">
-            <div class="row">
-                <label>ID</label>
-                <input type="text" />
+        <!-- form 추가 -->
+        <form th:action="@{/LoginCheck}" method="post">
+            <div class="form">
+                <div class="row">
+                    <label>ID</label>
+                    <input type="text" name="userId" />
+                </div>
+
+                <div class="row">
+                    <label>PASSWORD</label>
+                    <input type="password" name="userPassword" />
+                </div>
             </div>
 
-            <div class="row">
-                <label>PASSWORD</label>
-                <input type="password" />
+            <div class="form-buttons">
+                <button type="submit" class="btn search-btn">LOGIN</button>
             </div>
-        </div>
-        <div class="form-buttons">
-            <button type="submit" class="btn search-btn">LOGIN</button>
-        </div>
-<!--        <p class="error">※ログイン失敗</p>-->
+        </form>
+
+        <!-- <p class="error">※ログイン失敗</p> -->
     </div>
 </div>
 </body>
