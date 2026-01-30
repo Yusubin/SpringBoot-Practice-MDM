@@ -53,6 +53,6 @@ public class PayrollController {
         payrolls.forEach(e -> System.out.println(e.getPayrollId()));
         model.addAttribute("payrolls", payrolls);
 
-        return "PayrollsModify";
+        return "PayrollsMainModify";
     }
 }

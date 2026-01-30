@@ -81,7 +81,7 @@
                 <button class="btn edit-btn" onclick="location.href='/Salarys'">取消</button>
                 <button class="btn edit-btn" onclick="location.href='/SalarysInfoModifySave'">保存</button>
             </section>
-
+            <form th:action="@{/SalaryModify}" method="post">
             <table class="table_design02">
                 <thead>
                 <tr>
@@ -109,6 +109,7 @@
                 </tr>
                 </tbody>
             </table>
+            </form>
         </section>
     </main>
 </div>

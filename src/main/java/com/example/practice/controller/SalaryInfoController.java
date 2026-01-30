@@ -38,7 +38,7 @@ public class SalaryInfoController {
         return "SalaryInfoMain";
     }
 
-    @GetMapping("//SalaryMainModify")
+    @GetMapping("/SalaryMainModify")
     public String getViewsModify(Model model, HttpSession session) {
 
         LoginRequestDto user = (LoginRequestDto) session.getAttribute("user");

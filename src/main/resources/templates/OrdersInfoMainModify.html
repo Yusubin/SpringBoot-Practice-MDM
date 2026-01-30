@@ -94,9 +94,9 @@
                 <tbody>
                 <tr th:each="view : ${orderInfos}">
                     <td th:text="${view.orderId}"></td>
-                    <td><input type="text" id="userId" name="userId" th:text="${view.userId}"></td>
-                    <td><input type="text" id="quantity" name="quantity" th:text="${view.quantity}"/></td>
-                    <td><input type="text" id="orderItemId" name="quantity" th:text="${view.orderItemId}"/></td>
+                    <td><input type="text" id="userId" name="userId" th:value="${view.userId}"></td>
+                    <td><input type="text" id="quantity" name="quantity" th:value="${view.quantity}"/></td>
+                    <td><input type="text" id="orderItemId" name="quantity" th:value="${view.orderItemId}"/></td>
                 </tr>
                 </tbody>
             </table>
